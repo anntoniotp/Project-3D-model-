@@ -48,11 +48,19 @@ A modern, highly interactive personal portfolio website tailored for Computer Sy
    git clone [https://github.com/anntoniotp/Project-3D-model.git]
    cd Project-3D-model
 
-   ├── assets/
-│   ├── room.glb       # Optimized 3D Scene Asset
-│   ├── Osito.gif      # Flutter/Rive Logic Animation Preview
-│   └── perfil.png     # Engineering Profile Identity Picture
-├── index.html         # Document Structure & Import Maps
-├── styles.css         # Theme Ecosystem & Component Design
-└── script.js          # Unified Core & Three.js Animation Runtime
+   ├── assets
+   │   ├── room.glb       # Optimized 3D Scene Asset
+   │   ├── Osito.gif      # Flutter/Rive Logic Animation Preview
+   │   └── perfil.png     # Engineering Profile Identity Picture
+   ├── index.html         # Document Structure & Import Maps
+   ├── styles.css         # Theme Ecosystem & Component Design
+   └── script.js          # Unified Core & Three.js Animation Runtime
 
+---
+
+## 📬 Contact & Professional Networks
+
+If you have any questions about this Computer Systems Engineering project, want to discuss software engineering, or would like to connect professionally, feel free to reach out through any of the following channels:
+
+* 📧 **Institutional Email:** [LE24080019@merida.tecnm.mx](mailto:LE24080019@merida.tecnm.mx)
+* 💻 **GitHub Profile:** [@anntoniotp](https://github.com/anntoniotp)
