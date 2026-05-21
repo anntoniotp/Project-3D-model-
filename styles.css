@@ -1,0 +1,541 @@
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO (SYSTEM DESIGN)
+   ========================================================================== */
+:root {
+    --bg-main: #0a0f1d;          /* Fondo oscuro estilo IDE de programación */
+    --bg-card: #131b2e;          /* Color de las tarjetas (Gris Azulado Premium) */
+    --accent: #06b6d4;           /* Cian eléctrico de alta visibilidad */
+    --accent-glow: rgba(6, 182, 212, 0.15);
+    --accent-secondary: #3b82f6; /* Azul eléctrico */
+    --text-title: #f8fafc;
+    --text-body: #cbd5e1;
+    --text-muted: #64748b;
+    --border: rgba(255, 255, 255, 0.06);
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-body);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. NAVBAR MINIMALISTA
+   ========================================================================== */
+.main-header {
+    background-color: rgba(10, 15, 29, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--text-title);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.nav-github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted) !important;
+    transition: var(--transition) !important;
+}
+
+.nav-github:hover {
+    color: var(--accent) !important;
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO (HEADER DE IMPACTO)
+   ========================================================================== */
+main {
+    margin-top: 100px;
+    padding: 0 8%;
+}
+
+.hero-section {
+    max-width: 1100px;
+    margin: 6rem auto;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.badge {
+    background-color: rgba(6, 182, 212, 0.08);
+    color: var(--accent);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-info h1 {
+    font-size: 3.5rem;
+    color: var(--text-title);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: var(--accent);
+    background: linear-gradient(to right, #06b6d4, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--text-body);
+    margin-top: 1.5rem;
+    max-width: 540px;
+}
+
+.location-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--bg-main);
+    border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-title);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: rgba(6, 182, 212, 0.05);
+    transform: translateY(-2px);
+}
+
+.hero-avatar {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-avatar img {
+    width: 240px;
+    height: 240px;
+    border-radius: 24px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: var(--transition);
+}
+
+.hero-avatar img:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(6, 182, 212, 0.2);
+}
+
+/* ==========================================================================
+   4. CONTENEDORES Y GRID DE COMPONENTES
+   ========================================================================== */
+.section-container {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 3rem;
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: var(--text-title);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.skills-subtitle {
+    color: var(--text-title);
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+/* Grid de Habilidades Modernas */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: rgba(10, 15, 29, 0.4);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    background-color: rgba(10, 15, 29, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+}
+
+.skill-card h4 {
+    color: var(--text-title);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   6. TARJETAS DE PROYECTOS Y RECUROS DE REDES
+   ========================================================================== */
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    background-color: rgba(10, 15, 29, 0.4);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    gap: 1.5rem;
+    min-height: 340px;
+}
+
+.project-card:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    background-color: rgba(19, 27, 46, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-header h3 {
+    color: var(--text-title);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.project-status {
+    font-size: 0.75rem;
+    color: #10b981; /* Verde esmeralda */
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.project-description {
+    color: var(--text-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    font-family: var(--font-mono);
+    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--text-title);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+.project-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.project-btn:hover {
+    color: var(--text-title);
+    transform: translateX(3px);
+}
+
+/* Panel de Azulejos de Contacto */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-tile {
+    background-color: rgba(10, 15, 29, 0.4);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; /* <-- Cambia 12rem por 1.2rem */
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-tile:hover {
+    border-color: var(--accent);
+    background-color: rgba(6, 182, 212, 0.04);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.1);
+}
+
+.tile-icon {
+    font-size: 1.8rem;
+}
+
+.tile-info h5 {
+    color: var(--text-title);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.tile-info p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 8rem;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDAD TOTAL (MOBILE OPTIMIZED)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-info h1 {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        margin: 1.5rem auto 0 auto;
+    }
+    .location-tag {
+        justify-content: center;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .hero-avatar {
+        order: -1; /* Pone la foto arriba en celular */
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        padding: 1rem 5%;
+    }
+    .nav-links {
+        display: none; /* Esconde links en pantallas mini para evitar desborde */
+    }
+    .section-container {
+        padding: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   8. COMPONENTE INTERACTIVO: EL OSITO (RIVE STYLE) - CORREGIDO PARA APROVECHAR ESPACIO
+   ========================================================================== */
+.interactive-bear-card {
+    grid-column: span 2; /* Ocupa las dos columnas de la rejilla en pantallas grandes */
+    display: grid !important;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem !important;
+    align-items: center;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bear-showcase {
+    background-color: rgba(10, 15, 29, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1rem; /* Reducido para dar más espacio a la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    min-height: 280px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Modificado para que tome todo el espacio del cuadro del proyecto */
+.bear-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Regla añadida para forzar al GIF a rellenar el cuadro perfectamente */
+.bear-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain; /* Ajusta el oso de forma óptima sin que se recorte */
+    display: block;
+    border-radius: 8px;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    color: var(--accent) !important;
+    background-color: rgba(6, 182, 212, 0.1) !important;
+}
+
+/* Adaptabilidad del Osito Interactivo */
+@media (max-width: 900px) {
+    .interactive-bear-card {
+        grid-column: span 1 !important;
+        grid-template-columns: 1fr;
+        gap: 2rem !important;
+    }
+}
