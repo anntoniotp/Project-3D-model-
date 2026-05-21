@@ -1,12 +1,9 @@
-/* ==========================================================================
-   1. VARIABLES DE DISEÑO (SYSTEM DESIGN)
-   ========================================================================== */
 :root {
-    --bg-main: #0a0f1d;          /* Fondo oscuro estilo IDE de programación */
-    --bg-card: #131b2e;          /* Color de las tarjetas (Gris Azulado Premium) */
-    --accent: #06b6d4;           /* Cian eléctrico de alta visibilidad */
+    --bg-main: #0a0f1d;
+    --bg-card: #131b2e;
+    --accent: #06b6d4;
     --accent-glow: rgba(6, 182, 212, 0.15);
-    --accent-secondary: #3b82f6; /* Azul eléctrico */
+    --accent-secondary: #3b82f6;
     --text-title: #f8fafc;
     --text-body: #cbd5e1;
     --text-muted: #64748b;
@@ -16,7 +13,6 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Base Reset */
 * {
     margin: 0;
     padding: 0;
@@ -36,9 +32,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================================================
-   2. NAVBAR MINIMALISTA
-   ========================================================================== */
 .main-header {
     background-color: rgba(10, 15, 29, 0.75);
     backdrop-filter: blur(12px);
@@ -94,9 +87,6 @@ body {
     transform: scale(1.1);
 }
 
-/* ==========================================================================
-   3. SECCIÓN HERO (HEADER DE IMPACTO)
-   ========================================================================== */
 main {
     margin-top: 100px;
     padding: 0 8%;
@@ -223,9 +213,6 @@ main {
     box-shadow: 0 25px 50px rgba(6, 182, 212, 0.2);
 }
 
-/* ==========================================================================
-   4. CONTENEDORES Y GRID DE COMPONENTES
-   ========================================================================== */
 .section-container {
     max-width: 1100px;
     margin: 5rem auto;
@@ -250,7 +237,6 @@ h2 {
     font-weight: 500;
 }
 
-/* Grid de Habilidades Modernas */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -285,9 +271,61 @@ h2 {
     font-weight: 500;
 }
 
-/* ==========================================================================
-   6. TARJETAS DE PROYECTOS Y RECUROS DE REDES
-   ========================================================================== */
+#canvas-container {
+    width: 100%;
+    height: 500px;
+    background-color: rgba(10, 15, 29, 0.6);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+#canvas-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+.placeholder-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    z-index: 5;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(6, 182, 212, 0.1);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#btn-toggle-light {
+    transition: var(--transition) !important;
+}
+
+#btn-toggle-light:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
 .projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -329,7 +367,7 @@ h2 {
 
 .project-status {
     font-size: 0.75rem;
-    color: #10b981; /* Verde esmeralda */
+    color: #10b981;
     background-color: rgba(16, 185, 129, 0.1);
     padding: 0.2rem 0.6rem;
     border-radius: 6px;
@@ -381,7 +419,6 @@ h2 {
     transform: translateX(3px);
 }
 
-/* Panel de Azulejos de Contacto */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -396,7 +433,7 @@ h2 {
     border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 1.2rem; /* <-- Cambia 12rem por 1.2rem */
+    gap: 1.2rem;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -432,9 +469,6 @@ h2 {
     margin-top: 8rem;
 }
 
-/* ==========================================================================
-   7. RESPONSIVIDAD TOTAL (MOBILE OPTIMIZED)
-   ========================================================================== */
 @media (max-width: 900px) {
     .hero-section {
         grid-template-columns: 1fr;
@@ -454,7 +488,10 @@ h2 {
         justify-content: center;
     }
     .hero-avatar {
-        order: -1; /* Pone la foto arriba en celular */
+        order: -1;
+    }
+    #canvas-container {
+        height: 380px;
     }
 }
 
@@ -463,18 +500,18 @@ h2 {
         padding: 1rem 5%;
     }
     .nav-links {
-        display: none; /* Esconde links en pantallas mini para evitar desborde */
+        display: none;
     }
     .section-container {
         padding: 1.5rem;
     }
+    #canvas-container {
+        height: 300px;
+    }
 }
 
-/* ==========================================================================
-   8. COMPONENTE INTERACTIVO: EL OSITO (RIVE STYLE) - CORREGIDO PARA APROVECHAR ESPACIO
-   ========================================================================== */
 .interactive-bear-card {
-    grid-column: span 2; /* Ocupa las dos columnas de la rejilla en pantallas grandes */
+    grid-column: span 2;
     display: grid !important;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 3rem !important;
@@ -491,7 +528,7 @@ h2 {
     background-color: rgba(10, 15, 29, 0.6);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 1rem; /* Reducido para dar más espacio a la imagen */
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -502,7 +539,6 @@ h2 {
     overflow: hidden;
 }
 
-/* Modificado para que tome todo el espacio del cuadro del proyecto */
 .bear-container {
     width: 100%;
     height: 100%;
@@ -511,11 +547,10 @@ h2 {
     justify-content: center;
 }
 
-/* Regla añadida para forzar al GIF a rellenar el cuadro perfectamente */
 .bear-container img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain; /* Ajusta el oso de forma óptima sin que se recorte */
+    object-fit: contain;
     display: block;
     border-radius: 8px;
 }
@@ -531,7 +566,6 @@ h2 {
     background-color: rgba(6, 182, 212, 0.1) !important;
 }
 
-/* Adaptabilidad del Osito Interactivo */
 @media (max-width: 900px) {
     .interactive-bear-card {
         grid-column: span 1 !important;

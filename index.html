@@ -21,10 +21,11 @@
 <body>
 
     <header class="main-header">
-        <div class="logo">&lt;MT /&gt;</div>
+        <div class="logo">&lt;MATP &gt;</div>
         <nav class="nav-links">
             <a href="#about">Sobre Mí</a>
             <a href="#skills">Habilidades</a>
+            <a href="#workspace-3d">Modelo 3D</a>
             <a href="#projects">Proyectos</a>
             <a href="#contact">Contacto</a>
             <a href="https://github.com/anntoniotp" target="_blank" class="nav-github" aria-label="GitHub Perfil">
@@ -52,7 +53,7 @@
                 </div>
             </div>
             <div class="hero-avatar">
-                <img src="assets/perfil.jpg" alt="Marcos Antonio Tapia Puc" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=marcos&backgroundColor=0f172a'">
+                <img src="assets/perfil.png" alt="Marcos Antonio Tapia Puc" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=marcos&backgroundColor=0f172a'">
             </div>
         </section>
 
@@ -113,20 +114,29 @@
             </div>
         </section>
 
-        <section id="projects" class="section-container">
-            <h2>Proyectos Destacados</h2>
-
-            <div id="canvas-container">
+        <section id="workspace-3d" class="section-container">
+            <h2>Entorno Programador 3D</h2>
+            <p style="margin-bottom: 1.5rem; color: #94a3b8;">Explora e interactúa con mi espacio de trabajo modelado en Blender. Usa el botón izquierdo para rotar, la rueda para hacer zoom, el botón derecho para mover la cámara e interactúa con la iluminación del setup.</p>
+            
+            <div id="canvas-container" style="position: relative;">
+                <button id="btn-toggle-light" style="position: absolute; bottom: 20px; right: 20px; z-index: 10; padding: 10px 16px; background-color: #3b82f6; color: white; border: none; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; cursor: pointer; transition: background 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    💡 Cambiar Neon Setup
+                </button>
                 <div class="placeholder-content">
                     <div class="spinner"></div>
                     <p>Cargando Entorno 3D desde Blender...</p>
                 </div>
             </div>
+        </section>
+
+        <section id="projects" class="section-container">
+            <h2>Proyectos Destacados</h2>
+
             <div class="projects-list">
                 <article class="project-card interactive-bear-card">
                     <div class="project-details">
                         <div class="project-header">
-                            <h3>Mobile Login Screen Animado</h3>
+                            <h3>Login Screen Animation</h3>
                             <span class="project-status animate-pulse">Demo Activa</span>
                         </div>
                         <p class="project-description">Aplicación móvil desarrollada en Flutter que integra un sistema de inicio de sesión interactivo controlado por máquinas de estados a través de animaciones avanzadas. El personaje animado interactúa dinámicamente según las interacciones y el foco del usuario en la pantalla del dispositivo.</p>
@@ -145,7 +155,7 @@
                     
                     <div class="bear-showcase">
                         <div class="bear-container" id="bear-container" style="width: 100%; height: 100%;">
-                            <img src="assets/osito.gif" alt="Animación Oso Rive">
+                            <img src="assets/Osito.gif" alt="Animación Oso Rive">
                         </div>
                     </div>
                 </article>
@@ -179,14 +189,7 @@
                     <span class="tile-icon">✉️</span>
                     <div class="tile-info">
                         <h5>Correo Electrónico</h5>
-                        <p>marcostapia11tp@gmail.com</p>
-                    </div>
-                </a>
-                <a href="https://www.facebook.com/marcos.tapia" target="_blank" class="contact-tile">
-                    <span class="tile-icon">👥</span>
-                    <div class="tile-info">
-                        <h5>Facebook Profesional</h5>
-                        <p>marcos tapia</p>
+                        <p>LE24080019@merida.tecnm.mx</p>
                     </div>
                 </a>
                 <a href="https://github.com/anntoniotp" target="_blank" class="contact-tile">
