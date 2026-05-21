@@ -2,6 +2,22 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+const themeToggleBtn = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'light') {
+    document.body.classList.add('light-theme');
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    let theme = 'dark';
+    if (document.body.classList.contains('light-theme')) {
+        theme = 'light';
+    }
+    localStorage.setItem('theme', theme);
+});
+
 const container = document.getElementById('canvas-container');
 const placeholder = container.querySelector('.placeholder-content');
 const lightBtn = document.getElementById('btn-toggle-light');

@@ -28,6 +28,12 @@
             <a href="#workspace-3d">Modelo 3D</a>
             <a href="#projects">Proyectos</a>
             <a href="#contact">Contacto</a>
+            
+            <button id="theme-toggle" class="btn-theme" aria-label="Cambiar tema">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.22" x2="5.64" y2="17.78"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+
             <a href="https://github.com/anntoniotp" target="_blank" class="nav-github" aria-label="GitHub Perfil">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
@@ -37,7 +43,7 @@
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-info">
-                <span class="badge">Ingeniería en Sistemas Computacionales</span>
+                <span class="badge">Engineering in Computer Systems</span>
                 <h1>Marcos Antonio <br><span class="highlight">Tapia Puc</span></h1>
                 <p class="subtitle">Desarrollador de Software enfocado en interfaces interactivas y entornos gráficos en tiempo real.</p>
                 <div class="location-tag">
@@ -116,7 +122,7 @@
 
         <section id="workspace-3d" class="section-container">
             <h2>Entorno Programador 3D</h2>
-            <p style="margin-bottom: 1.5rem; color: #94a3b8;">Explora e interactúa con mi espacio de trabajo modelado en Blender. Usa el botón izquierdo para rotar, la rueda para hacer zoom, el botón derecho para mover la cámara e interactúa con la iluminación del setup.</p>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Explora e interactúa con mi espacio de trabajo modelado en Blender. Usa el botón izquierdo para rotar, la rueda para hacer zoom, el botón derecho para mover la cámara e interactúa con la iluminación del setup.</p>
             
             <div id="canvas-container" style="position: relative;">
                 <button id="btn-toggle-light" style="position: absolute; bottom: 20px; right: 20px; z-index: 10; padding: 10px 16px; background-color: #3b82f6; color: white; border: none; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; cursor: pointer; transition: background 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
